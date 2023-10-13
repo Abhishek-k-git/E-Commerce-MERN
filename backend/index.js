@@ -75,8 +75,7 @@ opts.secretOrKey = process.env.JWT_SECRET_KEY;
 //middlewares
 
 // server.use(express.static(path.resolve(__dirname, 'build')));
-const __dirname = path.resolve();
-server.use(express.static(path.join(__dirname, "/frontend/build")));
+server.use(express.static(path.join(__dirname, "../frontend/build")));
 server.use(cookieParser());
 server.use(
   session({
@@ -104,7 +103,7 @@ server.use('/orders', isAuth(), ordersRouter.router);
 
 // this line we add to make react router work in case of other routes doesnt match
 server.get('*', (req, res) =>
-  res.sendFile(path.join(__dirname, "/frontend/build/index.html"))
+  res.sendFile(path.join(__dirname, "../frontend/build/index.html"))
   // res.sendFile(path.resolve('build', 'index.html'))
 );
 
