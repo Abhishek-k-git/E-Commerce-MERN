@@ -39,6 +39,7 @@ function NavBar({ children }) {
         <Disclosure as="nav" className="bg-slate-900">
           {({ open }) => (
             <>
+              <div className='text-blue-100 bg-blue-500 text-xs sm:text-sm font-semibold flex justify-center p-2'>All Products at Heavy discount Like never before</div>
               <div className="mx-auto max-w-7xl px-4">
                 <div className="flex h-16 items-center justify-between">
                   <div className="flex items-center">
