@@ -154,9 +154,9 @@ function ProductForm() {
           }
         })}
       >
-        <div className="bg-white">
+        <div className="bg-white max-w-3xl mx-auto border shadow-lg px-4 pb-10 lg:px-8 py-4">
           <div className="">
-            <h2 className="text-lg lg:text-2xl font-bold leading-7 text-gray-900 mt-10">
+            <h2 className="text-lg lg:text-2xl font-bold leading-7 text-gray-900 mt-4">
               Add Product
             </h2>
 
@@ -170,7 +170,7 @@ function ProductForm() {
               <div className="sm:col-span-6">
                 <label
                   htmlFor="title"
-                  className="block text-sm font-medium leading-6 text-gray-600"
+                  className="block text-xs font-medium leading-6 text-gray-600"
                 >
                   Product Name
                 </label>
@@ -182,7 +182,7 @@ function ProductForm() {
                         required: 'name is required',
                       })}
                       id="title"
-                      className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                      className="block flex-1 border-1 rounded-md border-gray-500 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                     />
                   </div>
                 </div>
@@ -191,7 +191,7 @@ function ProductForm() {
               <div className="col-span-full">
                 <label
                   htmlFor="description"
-                  className="block text-sm font-medium leading-6 text-gray-600"
+                  className="block text-xs font-medium leading-6 text-gray-600"
                 >
                   Description
                 </label>
@@ -202,21 +202,22 @@ function ProductForm() {
                       required: 'description is required',
                     })}
                     rows={3}
-                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="block border-1 rounded-md border-gray-500 w-full rounded-md py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     defaultValue={''}
                   />
                 </div>
               </div>
 
-              <div className="col-span-full">
+              <div className="sm:col-span-2">
                 <label
                   htmlFor="brand"
-                  className="block text-sm font-medium leading-6 text-gray-600"
+                  className="block text-xs font-medium leading-6 text-gray-600"
                 >
                   Brand
                 </label>
                 <div className="">
                   <select
+                    className='border-1 rounded-md border-gray-500 text-gray-600'
                     {...register('brand', {
                       required: 'brand is required',
                     })}
@@ -231,61 +232,16 @@ function ProductForm() {
                 </div>
               </div>
 
-              <div className="col-span-full">
-                <label
-                  htmlFor="colors"
-                  className="block text-sm font-medium leading-6 text-gray-600"
-                >
-                  Colors
-                </label>
-                <div className="flex flex-row items-center">
-                  {colors.map((color) => (
-                    <>
-                      <input
-                        className='w-4 h-4 mr-1'
-                        type="checkbox"
-                        {...register('colors', {})}
-                        key={color.id}
-                        value={color.id}
-                      />{' '}
-                      <span className='mr-3'>{color.name}</span>
-                    </>
-                  ))}
-                </div>
-              </div>
-
-              <div className="col-span-full">
-                <label
-                  htmlFor="sizes"
-                  className="block text-sm font-medium leading-6 text-gray-600"
-                >
-                  Sizes
-                </label>
-                <div className="flex flex-row items-center">
-                  {sizes.map((size) => (
-                    <>
-                      <input
-                        className='w-4 h-4 mr-1'
-                        type="checkbox"
-                        {...register('sizes', {})}
-                        key={size.id}
-                        value={size.id}
-                      />{' '}
-                      <span className='mr-2'>{size.name}</span>
-                    </>
-                  ))}
-                </div>
-              </div>
-
-              <div className="col-span-full">
+              <div className="sm:col-span-2">
                 <label
                   htmlFor="category"
-                  className="block text-sm font-medium leading-6 text-gray-600"
+                  className="block text-xs font-medium leading-6 text-gray-600"
                 >
                   Category
                 </label>
                 <div className="">
                   <select
+                    className='border-1 rounded-md border-gray-500 text-gray-600'
                     {...register('category', {
                       required: 'category is required',
                     })}
@@ -300,10 +256,56 @@ function ProductForm() {
                 </div>
               </div>
 
+              <div className="col-span-full">
+                <label
+                  htmlFor="colors"
+                  className="block text-xs font-medium leading-6 text-gray-600"
+                >
+                  Colors
+                </label>
+                <div className="flex flex-row flex-wrap gap-1 items-center text-gray-700">
+                  {colors.map((color) => (
+                    <>
+                      <input
+                        className='w-4 h-4 mr-1 rounded-sm'
+                        type="checkbox"
+                        {...register('colors', {})}
+                        key={color.id}
+                        value={color.id}
+                      />{' '}
+                      <span className='mr-3'>{color.name}</span>
+                    </>
+                  ))}
+                </div>
+              </div>
+
+              <div className="col-span-full">
+                <label
+                  htmlFor="sizes"
+                  className="block text-xs font-medium leading-6 text-gray-600"
+                >
+                  Sizes
+                </label>
+                <div className="flex flex-row flex-wrap gap-1 items-center text-gray-700">
+                  {sizes.map((size) => (
+                    <>
+                      <input
+                        className='w-4 h-4 mr-1 rounded-sm'
+                        type="checkbox"
+                        {...register('sizes', {})}
+                        key={size.id}
+                        value={size.id}
+                      />{' '}
+                      <span className='mr-2'>{size.name}</span>
+                    </>
+                  ))}
+                </div>
+              </div>
+
               <div className="sm:col-span-2">
                 <label
                   htmlFor="price"
-                  className="block text-sm font-medium leading-6 text-gray-600"
+                  className="block text-xs font-medium leading-6 text-gray-600"
                 >
                   Price
                 </label>
@@ -317,7 +319,7 @@ function ProductForm() {
                         max: 10000,
                       })}
                       id="price"
-                      className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                      className="block border-1 rounded-md border-gray-500 flex-1 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                     />
                   </div>
                 </div>
@@ -326,7 +328,7 @@ function ProductForm() {
               <div className="sm:col-span-2">
                 <label
                   htmlFor="discountPercentage"
-                  className="block text-sm font-medium leading-6 text-gray-600"
+                  className="block text-xs font-medium leading-6 text-gray-600"
                 >
                   Discount Percentage
                 </label>
@@ -340,7 +342,7 @@ function ProductForm() {
                         max: 100,
                       })}
                       id="discountPercentage"
-                      className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                      className="block flex-1 border-1 rounded-md border-gray-500 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                     />
                   </div>
                 </div>
@@ -349,7 +351,7 @@ function ProductForm() {
               <div className="sm:col-span-2">
                 <label
                   htmlFor="stock"
-                  className="block text-sm font-medium leading-6 text-gray-600"
+                  className="block text-xs font-medium leading-6 text-gray-600"
                 >
                   Stock
                 </label>
@@ -362,7 +364,7 @@ function ProductForm() {
                         min: 0,
                       })}
                       id="stock"
-                      className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                      className="block flex-1 border-1 rounded-md border-gray-500 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                     />
                   </div>
                 </div>
@@ -371,7 +373,7 @@ function ProductForm() {
               <div className="sm:col-span-6">
                 <label
                   htmlFor="thumbnail"
-                  className="block text-sm font-medium leading-6 text-gray-600"
+                  className="block text-xs font-medium leading-6 text-gray-600"
                 >
                   Thumbnail
                 </label>
@@ -383,7 +385,7 @@ function ProductForm() {
                         required: 'thumbnail is required',
                       })}
                       id="thumbnail"
-                      className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                      className="block flex-1 border-1 rounded-md border-gray-500 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                     />
                   </div>
                 </div>
@@ -392,7 +394,7 @@ function ProductForm() {
               <div className="sm:col-span-6">
                 <label
                   htmlFor="image1"
-                  className="block text-sm font-medium leading-6 text-gray-600"
+                  className="block text-xs font-medium leading-6 text-gray-600"
                 >
                   Image 1
                 </label>
@@ -404,7 +406,7 @@ function ProductForm() {
                         required: 'image1 is required',
                       })}
                       id="image1"
-                      className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                      className="block flex-1 border-1 rounded-md border-gray-500 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                     />
                   </div>
                 </div>
@@ -413,7 +415,7 @@ function ProductForm() {
               <div className="sm:col-span-6">
                 <label
                   htmlFor="image2"
-                  className="block text-sm font-medium leading-6 text-gray-600"
+                  className="block text-xs font-medium leading-6 text-gray-600"
                 >
                   Image 2
                 </label>
@@ -425,7 +427,7 @@ function ProductForm() {
                         required: 'image is required',
                       })}
                       id="image2"
-                      className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                      className="block flex-1 border-1 rounded-md border-gray-500 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                     />
                   </div>
                 </div>
@@ -434,7 +436,7 @@ function ProductForm() {
               <div className="sm:col-span-6">
                 <label
                   htmlFor="image2"
-                  className="block text-sm font-medium leading-6 text-gray-600"
+                  className="block text-xs font-medium leading-6 text-gray-600"
                 >
                   Image 3
                 </label>
@@ -446,7 +448,7 @@ function ProductForm() {
                         required: 'image is required',
                       })}
                       id="image3"
-                      className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                      className="block flex-1 border-1 rounded-md border-gray-500 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                     />
                   </div>
                 </div>
@@ -455,7 +457,7 @@ function ProductForm() {
               <div className="sm:col-span-6">
                 <label
                   htmlFor="highlight1"
-                  className="block text-sm font-medium leading-6 text-gray-600"
+                  className="block text-xs font-medium leading-6 text-gray-600"
                 >
                   Highlight 1
                 </label>
@@ -465,7 +467,7 @@ function ProductForm() {
                       type="text"
                       {...register('highlight1', {})}
                       id="highlight1"
-                      className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                      className="block flex-1 border-1 rounded-md border-gray-500 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                     />
                   </div>
                 </div>
@@ -473,7 +475,7 @@ function ProductForm() {
               <div className="sm:col-span-6">
                 <label
                   htmlFor="highlight2"
-                  className="block text-sm font-medium leading-6 text-gray-600"
+                  className="block text-xs font-medium leading-6 text-gray-600"
                 >
                   Highlight 2
                 </label>
@@ -483,7 +485,7 @@ function ProductForm() {
                       type="text"
                       {...register('highlight2', {})}
                       id="highlight2"
-                      className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                      className="block flex-1 border-1 rounded-md border-gray-500 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                     />
                   </div>
                 </div>
@@ -491,7 +493,7 @@ function ProductForm() {
               <div className="sm:col-span-6">
                 <label
                   htmlFor="highlight3"
-                  className="block text-sm font-medium leading-6 text-gray-600"
+                  className="block text-xs font-medium leading-6 text-gray-600"
                 >
                   Highlight 3
                 </label>
@@ -501,7 +503,7 @@ function ProductForm() {
                       type="text"
                       {...register('highlight3', {})}
                       id="highlight3"
-                      className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                      className="block flex-1 border-1 rounded-md border-gray-500 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                     />
                   </div>
                 </div>
@@ -509,7 +511,7 @@ function ProductForm() {
               <div className="sm:col-span-6">
                 <label
                   htmlFor="highlight4"
-                  className="block text-sm font-medium leading-6 text-gray-600"
+                  className="block text-xs font-medium leading-6 text-gray-600"
                 >
                   Highlight 4
                 </label>
@@ -519,92 +521,16 @@ function ProductForm() {
                       type="text"
                       {...register('highlight4', {})}
                       id="highlight4"
-                      className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                      className="block flex-1 border-1 rounded-md border-gray-500 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                     />
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
-          {/* <div className="border-b border-gray-900/10 pb-12">
-            <div className="mt-10 space-y-10">
-              <fieldset>
-                <legend className="text-sm font-semibold leading-6 text-gray-600">
-                  By Email
-                </legend>
-                <div className="mt-6 space-y-6">
-                  <div className="relative flex gap-x-3">
-                    <div className="flex h-6 items-center">
-                      <input
-                        id="comments"
-                        name="comments"
-                        type="checkbox"
-                        className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                      />
-                    </div>
-                    <div className="text-sm leading-6">
-                      <label
-                        htmlFor="comments"
-                        className="font-medium text-gray-900"
-                      >
-                        Comments
-                      </label>
-                      <p className="text-gray-500">
-                        Get notified when someones posts a comment on a posting.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="relative flex gap-x-3">
-                    <div className="flex h-6 items-center">
-                      <input
-                        id="candidates"
-                        name="candidates"
-                        type="checkbox"
-                        className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                      />
-                    </div>
-                    <div className="text-sm leading-6">
-                      <label
-                        htmlFor="candidates"
-                        className="font-medium text-gray-900"
-                      >
-                        Candidates
-                      </label>
-                      <p className="text-gray-500">
-                        Get notified when a candidate applies for a job.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="relative flex gap-x-3">
-                    <div className="flex h-6 items-center">
-                      <input
-                        id="offers"
-                        name="offers"
-                        type="checkbox"
-                        className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                      />
-                    </div>
-                    <div className="text-sm leading-6">
-                      <label
-                        htmlFor="offers"
-                        className="font-medium text-gray-900"
-                      >
-                        Offers
-                      </label>
-                      <p className="text-gray-500">
-                        Get notified when a candidate accepts or rejects an
-                        offer.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </fieldset>
-            </div>
-          </div> */}
         </div>
 
-        <div className="mt-6 flex items-center justify-end gap-x-6">
+        <div className="mt-6 flex items-center gap-x-6 max-w-3xl mx-auto px-4">
           <button
             type="button"
             className="text-sm font-semibold leading-6 text-gray-900"
