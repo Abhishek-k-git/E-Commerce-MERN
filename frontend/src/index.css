@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: white;
+}
+.trunc {
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+#__react-alert__ span {
+    font-size: 12px !important;
+    text-transform: capitalize;
+}
+#__react-alert__ svg {
+    height: 13px;
+    width: 13px;
+    margin-right: 0px;
+}
