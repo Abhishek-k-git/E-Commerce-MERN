@@ -3,15 +3,14 @@
 > MERN is a fullstack implementation in MongoDB, Expressjs, React/Redux, Nodejs
 MERN stack is the idea of using Javascript Frameworks for full stack web development
 
-![poster](https://)
+![poster](https://github.com/Abhishek-k-git/Movies-App/blob/main/screenshot/movies-app.png)
 
 ### Table of content
 * [Overview](#Overview)
 * [Folder Structure](#Folder-Structure)
 * [Clone](#Clone)
-* [Client Side](#Clien-side)
+* [Client Side](#Client-side)
 * [Server Side](#Server-side)
-* [Deployment](#Deployment)
 * [Deployment](#Deployment)
 * [Last-But-Not-Least](#Last-But-Not-Least)
 
@@ -34,14 +33,76 @@ This project is a comprehensive Ecommerce website, innovatively developed utiliz
 ### Folder-Structure
 
 ```
-├── frontend
-    ├── LSTM Model.ipynb - Contains Data Processing training/testing and model building
-    ├── app.py - contains code for streamlit app 
-    └── keras_model.h5 - contains model build by keras
 ├── backend
-    ├── LSTM Model.ipynb - Contains Data Processing training/testing and model building
-    ├── app.py - contains code for streamlit app 
-    └── keras_model.h5 - contains model build by keras
+    ├── controller 
+        └── Auth.js
+        └── Brand.js
+        └── Cart.js
+        └── Category.js
+        └── Order.js
+        └── Product.js
+        └── User.js
+    ├── model
+        └── Brand.js
+        └── Cart.js
+        └── Category.js
+        └── Order.js
+        └── Product.js
+        └── User.js
+    ├── routes
+        └── Auth.js
+        └── Brands.js
+        └── Cart.js
+        └── Categories.js
+        └── Order.js
+        └── Products.js
+        └── Users.js
+    ├── services
+        └── common.js
+    └── index.js
+├── frontend
+    ├── public
+        └── index.html
+        └── logo.png
+        └── logo.svg
+    └── src
+        └── app
+            └── constants.js
+            └── store.js
+        └── features
+            └── admin/...
+            └── auth/...
+            └── cart/...
+            └── common/...
+            └── navbar/...
+            └── order/...
+            └── product/...
+            └── user/...
+        └── pages
+            └── 404.jsx
+            └── AdminHome.jsx
+            └── AdminOrderspage.jsx
+            └── AdminProductDetailPage.jsx
+            └── AdminProductFormPage.jsx
+            └── CartPage.jsx
+            └── Checkout.jsx
+            └── CheckoutForm.jsx
+            └── ForgotPasswordPage.jsx
+            └── Home.jsx
+            └── LoginPage.jsx
+            └── OrderSuccessPage.jsx
+            └── ProductDetailPage.jsx
+            └── ResetPasswordPage.jsx
+            └── SignupPage.jsx
+            └── StripeCheckout.jsx
+            └── UserOrders.jsx
+            └── UserProfilePage.jsx
+        └── App.css
+        └── App.js
+        └── App.test.js
+        └── index.css
+        └── index.js
+        └── Stripe.css
 ├── package.json
 ```
     
@@ -150,4 +211,3 @@ script {
     2. [tailwind](https://tailwindcss.com/docs/guides/create-react-app) for styling
     3. [Stripe](https://stripe.com/docs/development/quickstart?lang=node) for payment gateway integration
     4. [Tempmail](temp-mail.org/en/) for disposal mail addresses
-
