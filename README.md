@@ -1,4 +1,4 @@
-## [E-Commerce Website using MERN](https://ecommercemern-0xu8.onrender.com)
+## [E-Commerce Website using MERN / go to page](https://ecommercemern-0xu8.onrender.com)
 
 > MERN is a fullstack implementation in MongoDB, Expressjs, React/Redux, Nodejs
 MERN stack is the idea of using Javascript Frameworks for full stack web development
